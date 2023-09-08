@@ -4,7 +4,7 @@
     --black: #212529;
     --white: #f8f9fa;
     --dark: #616a74;
-    --font-family: "sans-serif";
+    --font-family: 'Inter', sans-serif;
     --light: #ffffff80;
     --heading-color: orangered;
 }
@@ -13,12 +13,15 @@
     box-sizing: border-box;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 body {
     /* color: white; */
     margin: 0;
     background-color: var(--white);
-
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-family);
     letter-spacing: 0.7px;
     /* font-size: 1rem; */
 }
@@ -35,6 +38,7 @@ nav {
     justify-content: space-between;
     background-color: var(--black);
     color: var(--white);
+    z-index: 999;
 }
 
 navbar {
@@ -58,7 +62,12 @@ navbar a:hover {
 }
 
 main {
-    margin: 7% 0%;
+    /* margin: 7% 0%; */
+    margin-top: 7%;
+}
+
+section[id='About'] {
+    padding-bottom: 11%;
 }
 
 #intro {
@@ -73,12 +82,17 @@ section {
 }
 
 section h2 {
-    color: orangered;
-    text-shadow: orange 5px 5px 6px;
+    /* color: orangered;
+    text-shadow: orange 5px 5px 6px; */
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--white);
 }
 
 .flex {
     display: flex;
+    text-align: justify;
 }
 
 .space-between {
@@ -267,6 +281,11 @@ button {
     color: var(--white);
     padding: 55px 35px;
     margin-bottom: 20px;
+    transition: transform .7s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card p {
@@ -299,14 +318,33 @@ button {
     padding: 10px;
 }
 
-.contact-form input {
+.contact-form input, textarea {
     padding: 15px;
+    border-radius: 8px;
+    border-color: white;
+    outline: none;
 }
 
 .contact-form button {
     padding: 15px;
     width: 100%;
+    background-color: var(--heading-color);
+    color: var(--white);
     /* flex-grow: 1; */
+}
+
+.contact .row {
+    gap: 70px;
+}
+
+address {
+    color: var(--light);
+}
+
+address label {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .item {
@@ -315,6 +353,7 @@ button {
     flex-direction: row;
     gap: 40px;
     font-size: 14px;
+    padding-bottom: 25px;
 }
 
 .item:before {
@@ -323,7 +362,7 @@ button {
 
 .item:before {
     content: "";
-    height: 100%;
+    height: calc(100% - 15px);
     left: 7px;
     opacity: .6;
     position: absolute;
@@ -345,12 +384,19 @@ button {
     padding: 32px 0 10px;
 }
 
-.workcard-header p{
-    font-weight: bolder;
-    color: skyblue;
+#calendar {
+    position: relative;
+    top: 2px;
 }
 
-.workcard-body{
+.workcard-header p {
+    /* font-weight: bolder; */
+    color: skyblue;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.workcard-body {
     color: var(--light);
 }
 
@@ -364,4 +410,117 @@ button {
     border: 2px solid white;
     outline: none;
     border-color: var(--heading-color);
+}
+
+#company {
+    display: block;
+    margin-top: 10px;
+    /* color: red; */
+    color: skyblue;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.item:nth-child(5) {
+    border-bottom: 1px solid var(--heading-color);
+}
+
+#address {
+    padding: 21px;
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex.space-between {
+        gap: 5%
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    #address {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        gap: 5%;
+        justify-content: space-around;
+    }
+
+    #address div {
+        flex-basis: 40%;
+    }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex.space-between {
+        gap: 5%
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    #address {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        gap: 5%;
+        justify-content: space-around;
+    }
+
+    #address div {
+        flex-basis: 40%;
+    }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .flex.space-between {
+        gap: 5%
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    #address {
+        display: flex;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        gap: 5%;
+        justify-content: space-around;
+    }
+
+    #address div {
+        flex-basis: 40%;
+    }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    main {
+        margin-top: 6%;
+    }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1281px) {
+    main {
+        margin-top: 6%;
+    }
 }
