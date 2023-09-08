@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
 :root {
-    --black: #2b2c2c;
+    --black: #212529;
     --light: #f8f9fa;
     --dark: #616a74;
     --font-family: "sans-serif"
@@ -13,15 +15,17 @@ body {
     /* color: white; */
     margin: 0;
     background-color: var(--light);
-    font-family: "Helvetica Neue", Arial, sans-serif;
+
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.7px;
     /* font-size: 1rem; */
 }
 
 nav {
     /* position header on top */
-    /* position: fixed;
+    position: fixed;
     top: 0;
-    width: 100vw; */
+    width: 100%;
 
     padding: 1% 3%;
     display: flex;
@@ -52,7 +56,7 @@ navbar a:hover {
 }
 
 main {
-    margin: 4% 7%;
+    margin: 7% 0%;
 }
 
 #intro {
@@ -61,8 +65,9 @@ main {
 }
 
 section {
+    padding: 4% 8%;
     width: 100%;
-    padding: 0px 15px;
+    /* padding: 0px 15px; */
 }
 
 section h2 {
@@ -72,17 +77,83 @@ section h2 {
 
 .flex {
     display: flex;
+}
+
+.space-between{
     justify-content: space-between;
 }
 
 .flex>p {
     flex-basis: 70%;
+    line-height: 35px;
+    color: var(--light);
 }
 
 .flex div {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: var(--light);
+}
+
+.flex div p b {
+    font-size: 16px;
+}
+
+.flex div p {
+    font-size: 14px;
+}
+
+button {
+    width: 205px;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.progress {
+    display: flex;
+    overflow: hidden;
+}
+
+.progress-sm {
+    height: 0.5rem !important;
+    border-radius: 10px;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+.progress-bar {
+    background-color: #20c997;
+}
+
+.content {
+    display: flex !important;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.block {
+    margin-bottom: 10px;
+}
+/* .Skills .block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.block div{
+    flex-grow: 1;
+} */
+
+.w-100 {
+    width: 100% !important;
 }
 
 /* 
@@ -91,15 +162,88 @@ section h2 {
     align-self: end;
 } */
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.bg-dark {
+    background-color: var(--dark) !important;
+}
+
+.skills-sec{
+    background-color: var(--black);
+    color: white;
+}
+
+.skills{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skillCard{
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px;
+    flex-basis: 50%;
+}
+
+.skProgress{
+    flex-grow: 1;
+    padding-left: 5px;
+    /* background-color: red; */
+}
+
+.skTop{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: .8rem;
+    font-weight: bolder;
+
+    font-weight: bolder;
+    padding: 5px 0 15px 0;
+}
