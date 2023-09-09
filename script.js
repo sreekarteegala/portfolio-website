@@ -17,3 +17,9 @@ var menu = document.getElementById("menu");
 menuButton.addEventListener("click", function () {
     menu.classList.toggle("open");
 });
+
+for(let item of menu.children){
+    item.addEventListener('click', (event) => {
+        menu.classList.toggle("open");
+    });
+}

@@ -67,7 +67,7 @@ main {
 }
 
 section[id='About'] {
-    padding-bottom: 11%;
+    padding-bottom: 10%;
 }
 
 #intro {
@@ -118,6 +118,10 @@ section h2 {
 
 .flex div p {
     font-size: 14px;
+}
+
+.flex div button {
+    margin-top: 10%;
 }
 
 button {
@@ -332,7 +336,7 @@ address label {
     position: absolute;
     top: 15px;
     width: 1px;
-    background-color: var(--heading-color);
+    background-color: #20c997;
 }
 
 .workCard {
@@ -362,6 +366,7 @@ address label {
 
 .workcard-body {
     color: var(--light);
+    text-align: justify;
 }
 
 .circle {
@@ -373,20 +378,28 @@ address label {
     /* border-color: white; */
     border: 2px solid white;
     outline: none;
-    border-color: var(--heading-color);
+    border-color: #20c997;
 }
 
 #company {
     display: block;
     margin-top: 10px;
     /* color: red; */
-    color: skyblue;
+    color: #20c997;
     font-size: 16px;
     letter-spacing: 0.5px;
 }
 
-.item:nth-child(5) {
-    border-bottom: 1px solid var(--heading-color);
+address p {
+    margin-top: 10px;
+    gap: 8px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+address div {
+    margin-bottom: 10px;
 }
 
 #address {
@@ -437,6 +450,10 @@ address label {
         flex-basis: 100%;
     }
 
+    navbar {
+        display: none;
+    }
+
     nav, navbar {
         flex-direction: column;
     }
@@ -457,9 +474,12 @@ address label {
 
     #menuButton {
         display: block;
+        margin: auto 0;
     }
 
-
+    .skills {
+        flex-direction: column;
+    }
 }
 
 /* Media Query for low resolution  Tablets, Ipads */
@@ -488,7 +508,7 @@ address label {
         flex-basis: 100%;
     }
 
-    navbar{
+    navbar {
         display: none;
     }
 
@@ -512,6 +532,7 @@ address label {
 
     #menuButton {
         display: block;
+        margin: auto 0;
     }
 
 }

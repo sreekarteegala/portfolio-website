@@ -1,0 +1,38 @@
+name: Form Submission
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Send email
+        run: |
+          echo "Subject: New Form Submission" > email.txt
+          echo "Name: ${{ secrets.NAME }}" >> email.txt
+          echo "Email: ${{ secrets.EMAIL }}" >> email.txt
+          echo "Message: ${{ secrets.MESSAGE }}" >> email.txt
+          cat email.txt | ssmtp youremail@example.com
+        env:
+          NAME: ${{ secrets.NAME }}
+          EMAIL: ${{ secrets.EMAIL }}
+          MESSAGE: ${{ secrets.MESSAGE }}
+        secrets:
+          NAME: ${{ github.event.inputs.name }}
+          EMAIL: ${{ github.event.inputs.email }}
+          MESSAGE: ${{ github.event.inputs.message }}
