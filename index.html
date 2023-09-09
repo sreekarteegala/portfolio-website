@@ -656,14 +656,12 @@
             <h2><u>Contact</u></h2>
             <div class="row">
                 <div class="col-8">
-                    <form action="submit" id="contact-form">
-                        <div class="contact-form">
-                            <input type="text" name="NAME" id="name" placeholder="Name">
-                            <input type="email" name="EMAIL" id="email" placeholder="Email">
-                            <input type="number" name="PHONE_NUMBER" id="phone_number" placeholder="Phone number">
-                            <textarea name="message" id="MESSAGE" rows="7" cols="50" placeholder="Message"></textarea>
-                            <button type="button" class="sendnow">Send Now!</button>
-                        </div>
+                    <form class="contact-form" id="contact-form">
+                        <input type="text" name="name" id="name" placeholder="Name" required>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        <input type="text" name="phone_number" id="phone_number" placeholder="10 Digit Phone number">
+                        <textarea name="message" id="message" rows="7" cols="50" placeholder="Message"></textarea>
+                        <button type="submit" class="sendnow">Send Now!</button>
                     </form>
                 </div>
                 <Address class="col-3" id="address">
@@ -685,8 +683,8 @@
                         <label>LinkedIn</label>
                         <p>
                             <img src="images/icons/linkedin.png" alt="phone" width="20">
-                            <a
-                                href="linkedin.com/in/sai-sreekar-teegala-a70477ab">linkedin.com/in/sai-sreekar-teegala-a70477ab</a>
+                            <a id="linkedIn" href="https://www.linkedin.com/in/sai-sreekar-teegala-a70477ab/"
+                                target="_blank">Sai-Sreekar-Teegala</a>
                         </p>
                     </div>
                     <div class="">

@@ -24,11 +24,21 @@ for (let item of menu.children) {
     });
 }
 
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new FormData(e.target);
 
-    fetch('https://github.com/sreekarteegala/portfolio-website/master', {
+const submitBtn = document.getElementsByClassName('sendnow')[0];
+
+submitBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let inputs = document.getElementById('contact-form').children;
+
+    const formData = new FormData();
+
+    for (let inp of inputs) {
+        if (inp.nodeName !== "BUTTON")
+            formData.append(inp.name, inp.value)
+    }
+
+    fetch('https://formspree.io/f/mvojrnlp', {
         method: 'POST',
         body: JSON.stringify(Object.fromEntries(formData)),
         headers: {
@@ -38,7 +48,12 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
         .then((response) => {
             if (response.ok) {
                 alert('Form submitted successfully!');
-                e.target.reset();
+
+                for (let inp of inputs) {
+                    console.log(inp.value)
+                    if (inp.nodeName !== "BUTTON")
+                        inp.value = "";
+                }
             } else {
                 alert('Form submission failed. Please try again.');
             }
@@ -48,4 +63,3 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
             alert('An error occurred. Please try again later.');
         });
 });
-

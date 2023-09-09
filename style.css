@@ -406,6 +406,10 @@ address div {
     padding: 21px;
 }
 
+#linkedIn {
+    color: var(--light);
+}
+
 #menu.open {
     display: flex;
 }
