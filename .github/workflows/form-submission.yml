@@ -23,12 +23,12 @@ jobs:
 
       - name: Send email
         run: |
-          echo "Subject: New Form Submission" > email.txt
-          echo "Name: ${{ secrets.NAME }}" >> email.txt
-          echo "Email: ${{ secrets.EMAIL }}" >> email.txt
-          echo "Message: ${{ secrets.MESSAGE }}" >> email.txt
-          echo "PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}" >> email.txt
-          cat email.txt | ssmtp teegalasreekar@gmail.com
+          echo "Subject: New Form Submission"
+          echo "Name: ${{ secrets.NAME }}"
+          echo "Email: ${{ secrets.EMAIL }}"
+          echo "Message: ${{ secrets.MESSAGE }}"
+          echo "PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}"
+          cat ssmtp teegalasreekar@gmail.com
         env:
           NAME: ${{ secrets.NAME }}
           EMAIL: ${{ secrets.EMAIL }}
