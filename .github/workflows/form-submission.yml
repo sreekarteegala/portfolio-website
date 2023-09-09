@@ -27,7 +27,7 @@ jobs:
           echo "Name: ${{ secrets.NAME }}" >> email.txt
           echo "Email: ${{ secrets.EMAIL }}" >> email.txt
           echo "Message: ${{ secrets.MESSAGE }}" >> email.txt
-          cat email.txt | ssmtp youremail@example.com
+          cat email.txt | ssmtp teegalasreekar@gmail.com
         env:
           NAME: ${{ secrets.NAME }}
           EMAIL: ${{ secrets.EMAIL }}
