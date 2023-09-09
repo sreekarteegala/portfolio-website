@@ -27,12 +27,15 @@ jobs:
           echo "Name: ${{ secrets.NAME }}" >> email.txt
           echo "Email: ${{ secrets.EMAIL }}" >> email.txt
           echo "Message: ${{ secrets.MESSAGE }}" >> email.txt
+          echo "PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}" >> email.txt
           cat email.txt | ssmtp teegalasreekar@gmail.com
         env:
           NAME: ${{ secrets.NAME }}
           EMAIL: ${{ secrets.EMAIL }}
+          PHONE_NUMBER: ${{ secrets.PHONE_NUMBER }}
           MESSAGE: ${{ secrets.MESSAGE }}
         secrets:
-          NAME: ${{ github.event.inputs.name }}
-          EMAIL: ${{ github.event.inputs.email }}
-          MESSAGE: ${{ github.event.inputs.message }}
+          NAME: ${{ github.event.inputs.NAME }}
+          EMAIL: ${{ github.event.inputs.EMAIL }}
+          PHONE_NUMBER: ${{ github.event.inputs.PHONE_NUMBER }}
+          MESSAGE: ${{ github.event.inputs.MESSAGE }}
